@@ -48,22 +48,21 @@ void FindMiddleArithmetic(int[,] array)
     Console.WriteLine("Средние арифметические по столбцам");
     Console.ResetColor();
     double[] middleArray = new double[array.GetLength(1)];
-    for (int m = 0; m < middleArray.Length; m++)
-    {
+
         for (int i = 0; i < array.GetLength(0); i++)
         {
             double middleArithmetic = 0.0;
             for (int j = 0; j < array.GetLength(1); j++)
             {
                 {
-                    middleArithmetic = middleArithmetic + array[i,j];
+                    middleArithmetic = middleArithmetic + array[j,i];
                 }
             }
-            middleArithmetic = middleArithmetic / array.GetLength(1);
+            middleArithmetic = middleArithmetic / array.GetLength(1) + 0.0;
             middleArithmetic = Math.Round(middleArithmetic,1);
-            middleArray[m] = middleArithmetic;
+            middleArray[i] = middleArithmetic;
         }
-    }
+
     for (int m = 0; m < middleArray.Length; m++)
     {
         Console.Write(" \t");
